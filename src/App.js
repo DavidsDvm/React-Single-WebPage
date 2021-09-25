@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Charactes from './components/Characters';
+import Index from './components/Index';
 
 function App() {
   const [appState, setAppState] = useState({
@@ -21,11 +23,18 @@ function App() {
   }, [setAppState]);
 
   return (
-    <> 
-      <Header />
-      <Charactes isLoading={appState.loading} repos={appState.repos}/>
-      <Footer />
-    </>
+    <Router>
+      <> 
+        <Header />
+        <Route path="/" exact>
+          <Index></Index>
+        </Route>
+        <Route path="/characters">
+          <Charactes isLoading={appState.loading} repos={appState.repos}/>
+        </Route>
+        <Footer />
+      </>
+    </Router>
   );
 }
 
