@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
     const logo = 'https://upload.wikimedia.org/wikipedia/commons/7/77/Breaking_Bad_logo.svg';
@@ -13,8 +14,8 @@ const Header = (props) => {
                 </a>
 
                 <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" className="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="#" className="nav-link px-2 text-white">Features</a></li>
+                <li><Link to="/" className="nav-link px-2 text-secondary">Home</Link></li>
+                <li><Link to="/characters" className="nav-link px-2 text-white">Characters</Link></li>
                 <li><a href="#" className="nav-link px-2 text-white">Pricing</a></li>
                 <li><a href="#" className="nav-link px-2 text-white">FAQs</a></li>
                 <li><a href="#" className="nav-link px-2 text-white">About</a></li>
